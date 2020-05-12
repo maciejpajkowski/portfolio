@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     body {
-        background: url(./static/background.png);
+        background: url('./static/background.png');
         background-position: center;
         background-size: cover;
         width: 100vw;
