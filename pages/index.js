@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import StyledContainer from '../components/StyledContainer';
 import StyledSidebar from '../components/StyledSidebar';
+import Header from '../components/Header';
 
 const IndexPage = () => (
   	<>
@@ -9,7 +10,7 @@ const IndexPage = () => (
 		</Head>
     	<StyledContainer>
 			<StyledSidebar>
-				bruh
+				<Header />
 			</StyledSidebar>
 			<div>bruhbruh</div>
 		</StyledContainer>
