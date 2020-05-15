@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import StyledContainer from '../components/StyledContainer';
-import StyledSidebar from '../components/StyledSidebar';
+import StyledSidebarContainer from '../components/StyledSidebarContainer';
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 const IndexPage = () => (
   	<>
@@ -9,9 +10,10 @@ const IndexPage = () => (
 			<title>My Portfolio</title>
 		</Head>
     	<StyledContainer>
-			<StyledSidebar>
+			<StyledSidebarContainer>
 				<Header />
-			</StyledSidebar>
+				<Sidebar />
+			</StyledSidebarContainer>
 			<div>bruhbruh</div>
 		</StyledContainer>
   	</>

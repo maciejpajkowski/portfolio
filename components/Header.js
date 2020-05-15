@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const StyledHeaderContainer = styled.div`
+const StyledHeader = styled.div`
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 15fr 5fr;
 `;
 
 const StyledHeaderFlex = styled.div`
@@ -16,13 +18,14 @@ const StyledHeaderFlex = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 0 1rem 1rem;
 `;
 
 const StyledHeaderAvatarContainer = styled.div`
     width: 6rem;
     height: 6rem;
     border-radius: 100%;
-    border: 3px solid #119922;
+    border: 3px solid #1ac966;
     z-index: 2;
     overflow: hidden;
 `;
@@ -60,8 +63,52 @@ const StyledSpan = styled.span`
     color: #888;    
 `;
 
+const StyledInfoBar = styled.div`
+    font-size: 26px;
+    background: #222;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+`;
+
+const StyledGithubIcon = styled.a`
+    text-decoration-line: none;
+    color: inherit;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        color: #662299;
+    }
+`;
+
+const StyledLinkedinIcon = styled.a`
+    text-decoration-line: none;
+    color: inherit;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        color: #1144ff;
+    }
+`;
+
+const StyledMailIcon = styled.a`
+    text-decoration-line: none;
+    color: inherit;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        color: #22aa55;
+    }
+`;
+
+
 const Header = () => (
-    <StyledHeaderContainer>
+    <StyledHeader>
         <StyledHeaderFlex>
             <StyledHeaderAvatarFlex>
                 <StyledHeaderAvatarContainer>
@@ -77,7 +124,18 @@ const Header = () => (
                 </StyledSpan>
             </StyledHeaderNameContainer>
         </StyledHeaderFlex>
-    </StyledHeaderContainer>
+        <StyledInfoBar>
+            <StyledGithubIcon href="https://github.com/maciejpajkowski" target="_blank">
+                <FontAwesomeIcon icon={faGithub} />
+            </StyledGithubIcon>
+            <StyledLinkedinIcon href="https://www.linkedin.com/in/maciej-pajkowski/" target="_blank">
+                <FontAwesomeIcon icon={faLinkedin} />
+            </StyledLinkedinIcon>
+            <StyledMailIcon href="mailto:maciej.pajkowski@gmail.com">
+                <FontAwesomeIcon icon={faEnvelope} />
+            </StyledMailIcon>
+        </StyledInfoBar>
+    </StyledHeader>
 );
 
 export default Header;
