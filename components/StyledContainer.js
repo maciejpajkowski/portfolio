@@ -8,7 +8,7 @@ const StyledContainer = styled.div`
     background: #333;
     color: #eee;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 7fr;
 `;
 
 export default StyledContainer;

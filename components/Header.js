@@ -9,6 +9,7 @@ const StyledHeader = styled.div`
     height: 100%;
     display: grid;
     grid-template-rows: 15fr 5fr;
+
 `;
 
 const StyledHeaderFlex = styled.div`
@@ -19,6 +20,13 @@ const StyledHeaderFlex = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 0 1rem 1rem;
+
+    @media (max-width: 1366px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+    }
 `;
 
 const StyledHeaderAvatarContainer = styled.div`
@@ -28,6 +36,11 @@ const StyledHeaderAvatarContainer = styled.div`
     border: 3px solid #1ac966;
     z-index: 2;
     overflow: hidden;
+
+    @media (max-width: 1700px) {
+        width: 4rem;
+        height: 4rem;
+    }
 `;
 
 const StyledHeaderAvatarFlex = styled.div`
@@ -51,16 +64,28 @@ const StyledHeaderNameContainer = styled.div`
     margin-left: 1rem;
     justify-content: center;
     flex-grow: 0.7;
+
+    @media (max-width: 1366px) {
+        margin: 0;
+    }
 `;
 
 const StyledName = styled.h1`
     font-size: 26px;
     font-weight: 800;
     margin: 0;
+
+    @media (max-width: 1700px) {
+        font-size: 22px
+    }
 `;
 
 const StyledSpan = styled.span`
-    color: #888;    
+    color: #888;
+
+    @media (max-width: 1700px) {
+        font-size: 12px
+    }
 `;
 
 const StyledInfoBar = styled.div`

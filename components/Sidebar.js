@@ -5,7 +5,7 @@ import { faHome, faUser, faPaperPlane, faCode } from '@fortawesome/free-solid-sv
 import { faReact, faJs, faHtml5, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 
 const StyledSidebar = styled.div`
-    /* nothing lol */
+    background: #292929;
 `;
 
 const StyledSidebarHeader = styled.div`
@@ -19,6 +19,7 @@ const StyledSidebarHeader = styled.div`
 const StyledSidebarList = styled.ul`
     margin: 0;
     padding: 0;
+    background: #333;
     
     li {
         display: flex;
