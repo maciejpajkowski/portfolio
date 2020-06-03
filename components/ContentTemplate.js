@@ -8,7 +8,7 @@ const StyledContentHeader = styled.header`
     font-size: 26px;
 `;
 
-const Content = ({ headerText, children }) => {
+const ContentTemplate = ({ headerText, children }) => {
     return (
         <>
             <StyledContentHeader>
@@ -19,4 +19,4 @@ const Content = ({ headerText, children }) => {
     )
 }
 
-export default Content;
+export default ContentTemplate;

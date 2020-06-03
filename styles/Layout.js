@@ -5,7 +5,7 @@ import StyledSidebarContainer from '../components/StyledSidebarContainer';
 import StyledContentContainer from '../components/StyledContentContainer';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import Content from '../components/Content';
+import ContentTemplate from '../components/ContentTemplate';
 
 const Layout = ({ pageTitle, headerText, children }) => (
     <>
@@ -18,9 +18,9 @@ const Layout = ({ pageTitle, headerText, children }) => (
 				<Sidebar />
 			</StyledSidebarContainer>
 			<StyledContentContainer>
-				<Content headerText={headerText}>
+				<ContentTemplate headerText={headerText}>
 					{children}
-				</Content>
+				</ContentTemplate>
 			</StyledContentContainer>
 		</StyledContainer>
   	</>
