@@ -24,11 +24,15 @@ const StyledHomePageTopContainer = styled.div`
     height: 40%;
     padding-right: 1rem;
     flex-direction: column;
-    border-bottom: 1px solid #222;
+    border-bottom: 2px solid #222;
 `;
 
 const StyledHomePageBottomContainer = styled.div`
-    height: 60%
+    height: 60%;
+    
+    h2 {
+        text-align: center;
+    }
 `;
 
 const HomePage = () => {
@@ -51,7 +55,11 @@ const HomePage = () => {
             </StyledHomePageTopContainer>
             <StyledHomePageBottomContainer>
                 <h2>Newest project:</h2>
-                <DisplayCase image={data.repository.openGraphImageUrl} />
+                <DisplayCase 
+                    image={data.repository.openGraphImageUrl} 
+                    title="carmechanic"
+                    description="This is a very simple app coded in HTML and CSS using Bootstrap."
+                />
             </StyledHomePageBottomContainer>
         </StyledHomePageContainer>
     )

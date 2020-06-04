@@ -51,7 +51,7 @@ const StyledSidebarList = styled.ul`
 
 const StyledPageLink = styled.li`
     div {
-        color: ${props => props.color}
+        color: #1ac966 /*${props => props.color}*/
     }
 
     &:hover {
