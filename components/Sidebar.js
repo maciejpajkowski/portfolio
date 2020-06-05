@@ -87,7 +87,7 @@ const Sidebar = () => (
                     <span>About me</span>
                 </StyledPageLink>
             </Link>
-            <Link href="/about">
+            <Link href="/contact">
                 <StyledPageLink color="#ffc336" borderColor="#b58a24">
                     <div>
                         <FontAwesomeIcon icon={faPaperPlane} />

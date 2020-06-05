@@ -74,14 +74,14 @@ const HomePage = () => {
         <StyledHomePageContainer>
             <StyledHomePageTopContainer>
                 <h1>Hello there!</h1>
-                <p>Welcome to my personal website! Here you can find all basic information about my projects. 
+                <p>Welcome to my personal portfolio website! Here you can find all basic information about my projects. 
                 <br />
                 Currently, all their data is being downloaded directly from their respective GitHub 
                 repositories using GraphQL.</p>
                 <p>Feel free to explore all categories available on the left.</p>
             </StyledHomePageTopContainer>
             <StyledHomePageBottomContainer>
-                <h2>Newest project:</h2>
+                <h2>Last updated project:</h2>
                 <DisplayCase 
                     image={projectImage} 
                     title={projectName}

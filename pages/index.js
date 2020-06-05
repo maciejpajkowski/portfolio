@@ -1,7 +1,7 @@
 import Layout from '../styles/Layout';
 import HomePage from '../components/pages/HomePage';
 
-const IndexPage = () => {
+const Index = () => {
 	return (
 		<Layout 
 			pageTitle="Home - Maciej Pajkowski"
@@ -12,4 +12,4 @@ const IndexPage = () => {
 	)
 }
 
-export default IndexPage;
+export default Index;
