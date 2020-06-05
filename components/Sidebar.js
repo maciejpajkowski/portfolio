@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faPaperPlane, faCode } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faJs, faHtml5, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 const StyledSidebar = styled.div`
     background: #292929;
@@ -70,24 +71,30 @@ const Sidebar = () => (
             GENERAL INFO
         </StyledSidebarHeader>
         <StyledSidebarList>
-            <StyledPageLink color="#3fd480" borderColor="#288550">
-                <div>
-                    <FontAwesomeIcon icon={faHome} />
-                </div>
-                <span>Home</span>
-            </StyledPageLink>
-            <StyledPageLink color="#3ec423" borderColor="#2e911a">
-                <div>
-                    <FontAwesomeIcon icon={faUser} />
-                </div>
-                <span>About me</span>
-            </StyledPageLink>
-            <StyledPageLink color="#ffc336" borderColor="#b58a24">
-                <div>
-                    <FontAwesomeIcon icon={faPaperPlane} />
-                </div>
-                <span>Contact</span>
-            </StyledPageLink>
+            <Link href="/">
+                <StyledPageLink color="#3fd480" borderColor="#288550">
+                    <div>
+                        <FontAwesomeIcon icon={faHome} />
+                    </div>
+                    <span>Home</span>
+                </StyledPageLink>
+            </Link>
+            <Link href="/about">
+                <StyledPageLink color="#3ec423" borderColor="#2e911a">
+                    <div>
+                        <FontAwesomeIcon icon={faUser} />
+                    </div>
+                    <span>About me</span>
+                </StyledPageLink>
+            </Link>
+            <Link href="/about">
+                <StyledPageLink color="#ffc336" borderColor="#b58a24">
+                    <div>
+                        <FontAwesomeIcon icon={faPaperPlane} />
+                    </div>
+                    <span>Contact</span>
+                </StyledPageLink>
+            </Link>
         </StyledSidebarList>
         <StyledSidebarHeader>
             PROJECTS

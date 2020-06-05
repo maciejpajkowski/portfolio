@@ -4,12 +4,32 @@ import DisplayCase from '../DisplayCase';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from "apollo-boost";
 
-const GET_IMAGE = gql`
+const GET_HOMEPAGE_DATA = gql`
 	{
-		repository(owner: "maciejpajkowski", name: "carmechanic") {
-			openGraphImageUrl
-		}
-	}
+        user(login: "maciejpajkowski") {
+            repositories(first: 1, orderBy: { field: UPDATED_AT, direction: DESC }) {
+              edges {
+                node {
+                  id
+                  name
+                  description
+                  openGraphImageUrl
+                  url
+                  homepageUrl
+                  repositoryTopics(first: 10) {
+                    edges {
+                      node {
+                        topic {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        }
+    }
 `;
 
 const StyledHomePageContainer = styled.div`
@@ -24,7 +44,7 @@ const StyledHomePageTopContainer = styled.div`
     height: 40%;
     padding-right: 1rem;
     flex-direction: column;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #1ac966;
 `;
 
 const StyledHomePageBottomContainer = styled.div`
@@ -36,13 +56,20 @@ const StyledHomePageBottomContainer = styled.div`
 `;
 
 const HomePage = () => {
-	const { loading, error, data } = useQuery(GET_IMAGE);
+	const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
 	if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :C</p>;
     
     console.log(data);
-    
+
+    const projectImage = data.user.repositories.edges[0].node.openGraphImageUrl;
+    const projectName = data.user.repositories.edges[0].node.name;
+    const projectDescription = data.user.repositories.edges[0].node.description;
+    const projectType = data.user.repositories.edges[0].node.repositoryTopics.edges[0].node.topic.name;
+    const projectRepoLink = data.user.repositories.edges[0].node.url;
+    const projectLiveLink = data.user.repositories.edges[0].node.homepageUrl;
+
     return (
         <StyledHomePageContainer>
             <StyledHomePageTopContainer>
@@ -56,9 +83,12 @@ const HomePage = () => {
             <StyledHomePageBottomContainer>
                 <h2>Newest project:</h2>
                 <DisplayCase 
-                    image={data.repository.openGraphImageUrl} 
-                    title="carmechanic"
-                    description="This is a very simple app coded in HTML and CSS using Bootstrap."
+                    image={projectImage} 
+                    title={projectName}
+                    description={projectDescription}
+                    type={projectType}
+                    repoLink={projectRepoLink}
+                    liveLink={projectLiveLink}
                 />
             </StyledHomePageBottomContainer>
         </StyledHomePageContainer>
