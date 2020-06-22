@@ -6,30 +6,30 @@ import { gql } from "apollo-boost";
 
 const GET_HOMEPAGE_DATA = gql`
 	{
-        user(login: "maciejpajkowski") {
-            repositories(first: 1, orderBy: { field: UPDATED_AT, direction: DESC }) {
+    user(login: "maciejpajkowski") {
+      repositories(first: 1, orderBy: { field: UPDATED_AT, direction: DESC }) {
+        edges {
+          node {
+            id
+            name
+            description
+            openGraphImageUrl
+            url
+            homepageUrl
+            repositoryTopics(first: 1) {
               edges {
                 node {
-                  id
-                  name
-                  description
-                  openGraphImageUrl
-                  url
-                  homepageUrl
-                  repositoryTopics(first: 10) {
-                    edges {
-                      node {
-                        topic {
-                          name
-                        }
-                      }
-                    }
+                  topic {
+                    name
                   }
                 }
               }
             }
+          }
         }
+      }
     }
+  }
 `;
 
 const StyledHomePageContainer = styled.div`
@@ -59,40 +59,40 @@ const HomePage = () => {
 	const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
 	if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :C</p>;
-    
-    console.log(data);
+  if (error) return <p>Error :C</p>;
+  
+  console.log(data);
 
-    const projectImage = data.user.repositories.edges[0].node.openGraphImageUrl;
-    const projectName = data.user.repositories.edges[0].node.name;
-    const projectDescription = data.user.repositories.edges[0].node.description;
-    const projectType = data.user.repositories.edges[0].node.repositoryTopics.edges[0].node.topic.name;
-    const projectRepoLink = data.user.repositories.edges[0].node.url;
-    const projectLiveLink = data.user.repositories.edges[0].node.homepageUrl;
+  const projectImage = data.user.repositories.edges[0].node.openGraphImageUrl;
+  const projectName = data.user.repositories.edges[0].node.name;
+  const projectDescription = data.user.repositories.edges[0].node.description;
+  const projectType = data.user.repositories.edges[0].node.repositoryTopics.edges[0].node.topic.name;
+  const projectRepoLink = data.user.repositories.edges[0].node.url;
+  const projectLiveLink = data.user.repositories.edges[0].node.homepageUrl;
 
-    return (
-        <StyledHomePageContainer>
-            <StyledHomePageTopContainer>
-                <h1>Hello there!</h1>
-                <p>Welcome to my personal portfolio website! Here you can find all basic information about my projects. 
-                <br />
-                Currently, all their data is being downloaded directly from their respective GitHub 
-                repositories using GraphQL.</p>
-                <p>Feel free to explore all categories available on the left.</p>
-            </StyledHomePageTopContainer>
-            <StyledHomePageBottomContainer>
-                <h2>Last updated project:</h2>
-                <DisplayCase 
-                    image={projectImage} 
-                    title={projectName}
-                    description={projectDescription}
-                    type={projectType}
-                    repoLink={projectRepoLink}
-                    liveLink={projectLiveLink}
-                />
-            </StyledHomePageBottomContainer>
-        </StyledHomePageContainer>
-    )
+  return (
+    <StyledHomePageContainer>
+        <StyledHomePageTopContainer>
+            <h1>Hello there!</h1>
+            <p>Welcome to my personal portfolio website! Here you can find all basic information about my projects. 
+            <br />
+            Currently, all their data is being downloaded directly from their respective GitHub 
+            repositories using GraphQL.</p>
+            <p>Feel free to explore all categories available on the left.</p>
+        </StyledHomePageTopContainer>
+        <StyledHomePageBottomContainer>
+            <h2>Last updated project:</h2>
+            <DisplayCase 
+                image={projectImage} 
+                title={projectName}
+                description={projectDescription}
+                type={projectType}
+                repoLink={projectRepoLink}
+                liveLink={projectLiveLink}
+            />
+        </StyledHomePageBottomContainer>
+    </StyledHomePageContainer>
+  )
 }
 
 export default HomePage;

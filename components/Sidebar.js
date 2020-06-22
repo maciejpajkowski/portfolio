@@ -45,7 +45,6 @@ const StyledSidebarList = styled.ul`
 
         &:hover {
             cursor: pointer;
-            transform: translateY(-5px);
         }
     }
 `;
