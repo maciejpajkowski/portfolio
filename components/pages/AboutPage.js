@@ -24,7 +24,7 @@ const StyledTechDisplayCaseItem = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    width: 9rem;
+    width: 10rem;
     text-align: center;
 
     svg {

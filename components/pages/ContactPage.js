@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ContactForm from '../ContactForm';
 
 const StyledContactPageContainer = styled.div`
     display: flex;
@@ -12,7 +13,9 @@ const ContactPage = () => {
 
     return (
         <StyledContactPageContainer>
-            bruhhh
+            <p>Below is a contact form, through which you can send me a message. 
+            <br />Have a job for me? Want to cooperate on something? Your toaster broke and need help? Let me know.</p>
+            <ContactForm />
         </StyledContactPageContainer>
     )
 }
