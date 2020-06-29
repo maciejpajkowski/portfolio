@@ -99,12 +99,14 @@ const Sidebar = () => (
             PROJECTS
         </StyledSidebarHeader>
         <StyledSidebarList>
-            <StyledPageLink color="#30b7ff" borderColor="#2282b5">
-                <div>
-                    <FontAwesomeIcon icon={faReact} />
-                </div>
-                <span>React.js</span>
-            </StyledPageLink>
+            <Link href="/projects/react">
+                <StyledPageLink color="#30b7ff" borderColor="#2282b5">
+                    <div>
+                        <FontAwesomeIcon icon={faReact} />
+                    </div>
+                    <span>React.js</span>
+                </StyledPageLink>
+            </Link>
             <StyledPageLink color="#ffee03" borderColor="#bfb200">
                 <div>
                     <FontAwesomeIcon icon={faJs} />

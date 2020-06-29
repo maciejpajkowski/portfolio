@@ -17,7 +17,7 @@ const StyledContactForm = styled.form`
         font-size: 1.6rem;
         border: none;
         outline: none;
-        border-bottom: 2px solid #1ac966;
+        border-bottom: 3px solid #1ac966;
         margin-bottom: 1rem;
         color: #eee;
     }
@@ -27,6 +27,7 @@ const StyledContactForm = styled.form`
         width: 20%;
         height: 3rem;
         font-weight: 600;
+        font-size: 18px;
         cursor: pointer;
         background: #333;
         outline: none;

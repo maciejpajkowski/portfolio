@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+    html {
+        height: 100%;
+    }
+    
     body {
         background: url('./static/background.png');
         background-position: center;
