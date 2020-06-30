@@ -107,30 +107,38 @@ const Sidebar = () => (
                     <span>React.js</span>
                 </StyledPageLink>
             </Link>
-            <StyledPageLink color="#ffee03" borderColor="#bfb200">
-                <div>
-                    <FontAwesomeIcon icon={faJs} />
-                </div>
-                <span>Vanilla JS & jQuery</span>
-            </StyledPageLink>
-            <StyledPageLink color="#ff4900" borderColor="#ad3200">
-                <div>
-                    <FontAwesomeIcon icon={faHtml5} />
-                </div>
-                <span>HTML & CSS</span>
-            </StyledPageLink>
-            <StyledPageLink color="#476cff" borderColor="#324db8">
-                <div>
-                    <FontAwesomeIcon icon={faMicrosoft} />
-                </div>
-                <span>C# (.NET)</span>
-            </StyledPageLink>
-            <StyledPageLink color="#b247ff" borderColor="#7e33b5">
-                <div>
-                    <FontAwesomeIcon icon={faCode} />
-                </div>
-                <span>Other</span>
-            </StyledPageLink>
+            <Link href="/projects/javascript">
+                <StyledPageLink color="#ffee03" borderColor="#bfb200">
+                    <div>
+                        <FontAwesomeIcon icon={faJs} />
+                    </div>
+                    <span>Vanilla JS & jQuery</span>
+                </StyledPageLink>
+            </Link>
+            <Link href="/projects/html">
+                <StyledPageLink color="#ff4900" borderColor="#ad3200">
+                    <div>
+                        <FontAwesomeIcon icon={faHtml5} />
+                    </div>
+                    <span>HTML & CSS</span>
+                </StyledPageLink>
+            </Link>
+            <Link href="/projects/dotnet">
+                <StyledPageLink color="#476cff" borderColor="#324db8">
+                    <div>
+                        <FontAwesomeIcon icon={faMicrosoft} />
+                    </div>
+                    <span>C# (.NET)</span>
+                </StyledPageLink>
+            </Link>
+            <Link href="/projects/other">
+                <StyledPageLink color="#b247ff" borderColor="#7e33b5">
+                    <div>
+                        <FontAwesomeIcon icon={faCode} />
+                    </div>
+                    <span>Other</span>
+                </StyledPageLink>
+            </Link>
         </StyledSidebarList>
     </StyledSidebar>
 );

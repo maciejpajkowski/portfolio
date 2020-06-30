@@ -26,6 +26,7 @@ const ProjectsList = ({ data }) => {
                         image={project.node.openGraphImageUrl}
                         title={project.node.name}
                         description={project.node.description}
+                        type={project.node.repositoryTopics.edges[0].node.topic.name}
                         key={project.node.name}
                     />
                 )

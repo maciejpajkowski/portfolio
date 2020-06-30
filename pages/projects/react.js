@@ -1,5 +1,5 @@
 import Layout from '../../styles/Layout';
-import ProjectsReactPage from '../../components/pages/ProjectsReactPage';
+import ProjectsPage from '../../components/pages/ProjectsPage';
 
 const ProjectsReact = () => {
 	return (
@@ -7,7 +7,7 @@ const ProjectsReact = () => {
 			pageTitle="React Projects - Maciej Pajkowski"
 			headerText="React Projects"
 		>
-			<ProjectsReactPage />
+			<ProjectsPage tech="react" />
 		</Layout>
 	)
 }

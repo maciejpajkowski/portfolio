@@ -152,7 +152,7 @@ const StyledDisplayCaseButton = styled.button`
 
 const StyledDisplayCaseImageContainer = styled.div`
     border: 2px solid #1ac966;
-    border-radius: 0.6rem;
+    /* border-radius: 0.6rem; */
     height: 100%;
     width: 95%;
     overflow: hidden;

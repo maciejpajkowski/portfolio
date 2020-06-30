@@ -32,14 +32,14 @@ const GET_PROJECTS_DATA = gql`
 }
 `;
 
-const StyledProjectsReactPage = styled.div`
+const StyledProjectsPage = styled.div`
     display: flex;
     /* padding: 1rem; */
     width: 100%;
     height: 100%;
 `;
 
-const ProjectsReactPage = () => {
+const ProjectsPage = ({ tech }) => {
     const { loading, error, data } = useQuery(GET_PROJECTS_DATA);
 
     if (loading) return <p>Loading...</p>;
@@ -47,27 +47,19 @@ const ProjectsReactPage = () => {
 
     console.log(data);
 
-    const getProjects = (tech) => {
-        let projectsList = [];
+    const getProjects = (techType) => {
+        let projectsList = data.user.repositories.edges.filter((item) => {
+            return item.node.repositoryTopics.edges[0].node.topic.name === techType;
+        });;
 
-        switch(tech) {
-            case "react":
-                projectsList = data.user.repositories.edges.filter((item) => {
-                    return item.node.repositoryTopics.edges[0].node.topic.name === "react";
-                });
-                return projectsList;
-            default:
-                return projectsList;
-        }
+        return projectsList;
     }
 
-    console.log(getProjects("react"));
-
     return (
-        <StyledProjectsReactPage>
-            <ProjectsList data={getProjects("react")} />
-        </StyledProjectsReactPage>
+        <StyledProjectsPage>
+            <ProjectsList data={getProjects(tech)} />
+        </StyledProjectsPage>
     )
 }
 
-export default ProjectsReactPage;
+export default ProjectsPage;
