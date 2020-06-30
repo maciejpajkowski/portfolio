@@ -164,7 +164,7 @@ const StyledDisplayCaseImage = styled.div`
     width: 100%;
     background: url(${props => props.image});
     background-size: cover;
-    background-position: center;
+    background-position: left top;
 `;
 
 const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) => {

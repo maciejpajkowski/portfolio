@@ -17,22 +17,19 @@ const StyledProjectsList = styled.div`
     }
 `;
 
-const ProjectsList = (props) => {
+const ProjectsList = ({ data }) => {
     return (
         <StyledProjectsList>
-            <ProjectsListItem key="1" />
-            <ProjectsListItem key="2" />
-            <ProjectsListItem key="3" />
-            <ProjectsListItem key="4" />
-            <ProjectsListItem key="5" />
-            <ProjectsListItem key="65" />
-            <ProjectsListItem key="7" />
-            <ProjectsListItem key="85" />
-            <ProjectsListItem key="05" />
-            <ProjectsListItem key="75" />
-            <ProjectsListItem key="175" />
-            <ProjectsListItem key="755" />
-            <ProjectsListItem key="725" />
+            {data.map((project) => {
+                return (
+                    <ProjectsListItem
+                        image={project.node.openGraphImageUrl}
+                        title={project.node.name}
+                        description={project.node.description}
+                        key={project.node.name}
+                    />
+                )
+            })}
         </StyledProjectsList>
     )
 }

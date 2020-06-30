@@ -17,8 +17,10 @@ const ProjectsListItemContainer = styled.div`
 
 const ProjectsListItemImage = styled.div`
     display: flex;
-    background: #000;
     height: 70%;
+    background: ${props => props.image ? 'url(' + props.image + ')' : '#000'};
+    background-size: cover;
+    background-position: center;
 `;
 
 const ProjectsListItemInfo = styled.div`
@@ -27,11 +29,17 @@ const ProjectsListItemInfo = styled.div`
     height: 30%;
 `
 
-const ProjectsListItem = (props) => {
+const ProjectsListItem = ({ title, description, image }) => {
     return (
         <ProjectsListItemContainer>
-            <ProjectsListItemImage />
-            <ProjectsListItemInfo />
+            <ProjectsListItemImage image={image} />
+            <ProjectsListItemInfo>
+                <div>ICO</div>
+                <div>
+                    <span>{title}</span>
+                    <span>{description}</span>
+                </div>
+            </ProjectsListItemInfo>
         </ProjectsListItemContainer>
     )
 }
