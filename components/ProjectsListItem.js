@@ -6,8 +6,7 @@ import { faReact, faJs, faHtml5, faMicrosoft } from '@fortawesome/free-brands-sv
 
 const StyledProjectsListItemContainer = styled.div`
     border-bottom: 3px solid #1ac966;
-    width: 30%;
-    height: 14rem;
+    height: 15rem;
     cursor: pointer;
     transition: all 0.3s;
     margin: 1rem;
