@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeEurope, faFileAlt, faCode } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faGithub, faJs, faHtml5, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faGlobeEurope, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import getAdequateIcon from '../utils/getAdequateIcon';
+import getAdequateText from '../utils/getAdequateText';
 
 const StyledDisplayCaseContainer = styled.div`
     display: flex;
@@ -152,7 +154,6 @@ const StyledDisplayCaseButton = styled.button`
 
 const StyledDisplayCaseImageContainer = styled.div`
     border: 2px solid #1ac966;
-    /* border-radius: 0.6rem; */
     height: 100%;
     width: 95%;
     overflow: hidden;
@@ -168,36 +169,6 @@ const StyledDisplayCaseImage = styled.div`
 `;
 
 const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) => {
-    
-    const getAdequateIcon = (usedType) => {
-        switch(usedType) {
-            case "react":
-                return faReact;
-            case "javascript":
-                return faJs;
-            case "html":
-                return faHtml5;
-            case "dotnet":
-                return faMicrosoft;
-            case "other":
-                return faCode;
-        }
-    }
-
-    const getAdequateText = (usedType) => {
-        switch(usedType) {
-            case "react":
-                return "React.js";
-            case "javascript":
-                return "Vanilla JS or jQuery";
-            case "html":
-                return "HTML & CSS";
-            case "dotnet":
-                return "C# (.NET)";
-            case "other":
-                return "Other";
-        }
-    }
 
     return (
         <StyledDisplayCaseContainer>

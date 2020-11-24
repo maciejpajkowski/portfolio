@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faJs, faHtml5, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import fixDescriptionLength from '../utils/fixDescriptionLength';
+import getAdequateIcon from '../utils/getAdequateIcon';
 
 const StyledProjectsListItemContainer = styled.div`
     border-bottom: 3px solid #1ac966;
     height: 15rem;
     cursor: pointer;
     transition: all 0.3s;
-    margin: 1rem;
 
     &:hover {
         box-shadow: 0 2px 2px 1px #222;
@@ -43,6 +42,7 @@ const StyledProjectsListItemInfo = styled.div`
     display: flex;
     background: #292929;
     height: 30%;
+    overflow: hidden;
 `
 
 const StyledProjectsListItemIcon = styled.div`
@@ -73,30 +73,18 @@ const StyledProjectsListItemTextContainer = styled.div`
 `;
 
 const StyledProjectsListItemTitle = styled.h3`
-    margin: 0.5rem 0 0 0;
+    margin: 0.35rem 0 0 0;
     font-size: 1.1rem;
 `;
 
 const StyledProjectsListItemDescription = styled.span`
     font-size: 0.8rem;
+    margin-right: 0.1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
 `;
 
 const ProjectsListItem = ({ title, description, image, type }) => {
-    
-    const getAdequateIcon = (usedType) => {
-        switch(usedType) {
-            case "react":
-                return faReact;
-            case "javascript":
-                return faJs;
-            case "html":
-                return faHtml5;
-            case "dotnet":
-                return faMicrosoft;
-            case "other":
-                return faCode;
-        }
-    }
 
     return (
         <StyledProjectsListItemContainer type={type}>
@@ -107,7 +95,7 @@ const ProjectsListItem = ({ title, description, image, type }) => {
                 </StyledProjectsListItemIcon>
                 <StyledProjectsListItemTextContainer>
                     <StyledProjectsListItemTitle>{title}</StyledProjectsListItemTitle>
-                    <StyledProjectsListItemDescription>{description}</StyledProjectsListItemDescription>
+                    <StyledProjectsListItemDescription>{fixDescriptionLength(description)}</StyledProjectsListItemDescription>
                 </StyledProjectsListItemTextContainer>
             </StyledProjectsListItemInfo>
         </StyledProjectsListItemContainer>

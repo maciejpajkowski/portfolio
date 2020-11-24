@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ProjectsList from '../ProjectsList';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from "apollo-boost";
+import testData from '../../tests/testData';
 
 const GET_PROJECTS_DATA = gql`
 {
@@ -48,9 +49,13 @@ const ProjectsPage = ({ tech }) => {
     console.log(data);
 
     const getProjects = (techType) => {
-        let projectsList = data.user.repositories.edges.filter((item) => {
+        // let projectsList = data.user.repositories.edges.filter((item) => {
+        //     return item.node.repositoryTopics.edges[0].node.topic.name === techType;
+        // });
+
+        let projectsList = testData.user.repositories.edges.filter((item) => {
             return item.node.repositoryTopics.edges[0].node.topic.name === techType;
-        });;
+        });
 
         return projectsList;
     }
