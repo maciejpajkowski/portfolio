@@ -168,7 +168,19 @@ const StyledDisplayCaseImage = styled.div`
     background-position: left top;
 `;
 
-const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) => {
+const StyledCloseButton = styled(StyledDisplayCaseButton)`
+    display: ${props => props.isModal ? 'inline-block' : 'none'};
+    font-size: 1rem;
+    line-height: 1rem;
+    height: 2.2rem;
+    position: absolute;
+    right: -1.5rem;
+    top: 0.5rem;
+    color: #eee;
+    border: none;
+`;
+
+const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isModal, onClick }) => {
 
     return (
         <StyledDisplayCaseContainer>
@@ -183,6 +195,7 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) =>
                             {getAdequateText(type)}
                         </StyledDisplayCaseProjectType>
                     </StyledDisplayCaseProject>
+                    
                 </StyledDisplayCaseTitle>
                 <StyledDisplayCaseDescription>
                     {description}
@@ -206,6 +219,11 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) =>
                                 <span>Live</span>
                         </StyledDisplayCaseButton>
                     </StyledDisplayCaseLink>
+                    <StyledDisplayCaseLink onClick={onClick}>
+                        <StyledCloseButton isModal={isModal}>
+                                <span>X</span>
+                        </StyledCloseButton>
+                    </StyledDisplayCaseLink>
                 </StyledDisplayCaseButtonContainer>
             </StyledDisplayCaseHalfContainer>
             <StyledDisplayCaseHalfContainer>
@@ -213,6 +231,7 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image }) =>
                     <StyledDisplayCaseImage image={image} />
                 </StyledDisplayCaseImageContainer>
             </StyledDisplayCaseHalfContainer>
+            
         </StyledDisplayCaseContainer>
     )
 }

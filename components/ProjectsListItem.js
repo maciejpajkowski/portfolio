@@ -84,10 +84,10 @@ const StyledProjectsListItemDescription = styled.span`
     word-break: break-word;
 `;
 
-const ProjectsListItem = ({ title, description, image, type }) => {
+const ProjectsListItem = ({ title, description, image, type, onClick }) => {
 
     return (
-        <StyledProjectsListItemContainer type={type}>
+        <StyledProjectsListItemContainer type={type} onClick={onClick}>
             <StyledProjectsListItemImage image={image} />
             <StyledProjectsListItemInfo>
                 <StyledProjectsListItemIcon type={type}>

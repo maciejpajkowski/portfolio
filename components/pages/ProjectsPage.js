@@ -49,13 +49,13 @@ const ProjectsPage = ({ tech }) => {
     console.log(data);
 
     const getProjects = (techType) => {
-        // let projectsList = data.user.repositories.edges.filter((item) => {
-        //     return item.node.repositoryTopics.edges[0].node.topic.name === techType;
-        // });
-
-        let projectsList = testData.user.repositories.edges.filter((item) => {
+        let projectsList = data.user.repositories.edges.filter((item) => {
             return item.node.repositoryTopics.edges[0].node.topic.name === techType;
         });
+
+        // let projectsList = testData.user.repositories.edges.filter((item) => {
+        //     return item.node.repositoryTopics.edges[0].node.topic.name === techType;
+        // });
 
         return projectsList;
     }

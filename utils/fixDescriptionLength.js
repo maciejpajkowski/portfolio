@@ -3,17 +3,20 @@ const fixDescriptionLength = (suppliedDescription) => {
     const maxCharCount = 88;
     let fixedDescriptionArray = [];
 
-    const splitSuppliedDescription = suppliedDescription.split(" ");
+    if (!!suppliedDescription) {
 
-    for (let i = 0; i < splitSuppliedDescription.length; i++) {
-        charCount += splitSuppliedDescription[i].length;
+        const splitSuppliedDescription = suppliedDescription.split(" ");
 
-        if (charCount < maxCharCount) {
-            fixedDescriptionArray.push(splitSuppliedDescription[i]);
-        }
-        else {
-            fixedDescriptionArray.push(" (...)");
-            return fixedDescriptionArray.join(" ");
+        for (let i = 0; i < splitSuppliedDescription.length; i++) {
+            charCount += splitSuppliedDescription[i].length;
+
+            if (charCount < maxCharCount) {
+                fixedDescriptionArray.push(splitSuppliedDescription[i]);
+            }
+            else {
+                fixedDescriptionArray.push(" (...)");
+                return fixedDescriptionArray.join(" ");
+            }
         }
     }
 
