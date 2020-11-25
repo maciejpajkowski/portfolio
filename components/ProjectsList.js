@@ -19,8 +19,26 @@ const StyledProjectsList = styled.div`
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+        background-color: transparent;
+        border-radius: 5px;
+    }
+
     &::-webkit-scrollbar {
-        display: none;
+        width: 5px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #FFF;
+        background-image: -webkit-gradient(linear,
+                                        40% 0%,
+                                        75% 84%,
+                                        from(#4D9C41),
+                                        to(#19911D),
+                                        color-stop(.6,#1ac966))
     }
 `;
 
