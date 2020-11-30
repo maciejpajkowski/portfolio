@@ -23,6 +23,7 @@ const StyledPadding = styled.div`
 
 const StyledProjectsList = styled.div` 
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, minmax(15rem, auto));
     grid-gap: 1rem 1rem;
