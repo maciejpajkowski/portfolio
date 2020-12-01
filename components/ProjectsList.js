@@ -7,12 +7,19 @@ import Modal from 'react-modal';
 Modal.setAppElement("#__next");
 
 const customStyles = {
+    overlay: {
+        backgroundColor: 'rgba(55, 55, 55, 0.6)'
+    },
     content : {
         background: '#333',
         color: '#fff',
-        margin: 'auto auto'
-
-    
+        margin: 'auto',
+        border: 'none',
+        borderRadius: '0',
+        borderBottom: '3px solid #1ac966',
+        boxShadow: '0 0 10px 3px #111',
+        width: '80%',
+        height: '60vh'
     }
   }; // modal custom styles
 
@@ -101,7 +108,7 @@ const ProjectsList = ({ data }) => {
                     onRequestClose={closeModal}
                     key={modalContents.name}
                     style={customStyles}
-                    
+                    closeTimeoutMS={300}
                 >
                     <DisplayCase
                         title={modalContents.title}

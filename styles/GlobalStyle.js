@@ -24,6 +24,32 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         align-items: center;
     }
+
+    .ReactModal__Overlay {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .ReactModal__Overlay--after-open {
+        opacity: 1;
+    }
+
+    .ReactModal__Overlay--before-close {
+        opacity: 0;
+    }
+
+    .ReactModal__Content {
+        transition: all 0.3s ease-in-out;
+        transform: scale(0.8);
+    }
+
+    .ReactModal__Content--after-open {
+        transform: scale(1);
+    }
+
+    .ReactModal__Content--before-close {
+        transform: scale(0.8);
+    }
 `;
 
 export default GlobalStyle;

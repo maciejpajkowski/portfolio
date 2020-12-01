@@ -8,7 +8,7 @@ import getAdequateText from '../utils/getAdequateText';
 
 const StyledDisplayCaseContainer = styled.div`
     display: flex;
-    height: 80%;
+    height: 100%;
 `;
 
 const StyledDisplayCaseHalfContainer = styled.div`
@@ -195,7 +195,6 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isMo
                             {getAdequateText(type)}
                         </StyledDisplayCaseProjectType>
                     </StyledDisplayCaseProject>
-                    
                 </StyledDisplayCaseTitle>
                 <StyledDisplayCaseDescription>
                     {description}
@@ -231,7 +230,6 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isMo
                     <StyledDisplayCaseImage image={image} />
                 </StyledDisplayCaseImageContainer>
             </StyledDisplayCaseHalfContainer>
-            
         </StyledDisplayCaseContainer>
     )
 }

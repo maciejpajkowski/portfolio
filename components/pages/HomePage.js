@@ -48,6 +48,8 @@ const StyledHomePageTopContainer = styled.div`
 `;
 
 const StyledHomePageBottomContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     height: 60%;
     
     h2 {
