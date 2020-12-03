@@ -5,11 +5,11 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const StyledHeader = styled.div`
+    background: #333;
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: 15fr 5fr;
-
 `;
 
 const StyledHeaderFlex = styled.div`
@@ -27,6 +27,10 @@ const StyledHeaderFlex = styled.div`
         text-align: center;
         padding-left: 0;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+    }
 `;
 
 const StyledHeaderAvatarFlex = styled.div`
@@ -39,17 +43,17 @@ const StyledHeaderAvatarContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6rem;
-    height: 6rem;
+    width: 6em;
+    height: 6em;
     border-radius: 100%;
     border: 2px solid #1ac966;
     overflow: hidden;
     box-sizing: content-box;
-    padding: 0.3rem;
+    padding: 0.3em;
 
     @media (max-width: 1700px) {
-        width: 4rem;
-        height: 4rem;
+        width: 4em;
+        height: 4em;
     }
 `;
 
@@ -65,12 +69,16 @@ const StyledHeaderAvatar = styled.div`
 const StyledHeaderNameContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    margin-left: 5%;
     justify-content: center;
     flex-grow: 0.7;
 
     @media (max-width: 1366px) {
         margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        flex-grow: 0.2;
     }
 `;
 
@@ -135,8 +143,32 @@ const StyledMailIcon = styled.a`
     }
 `;
 
+const StyledCloseButton = styled.button`
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 1rem;
+    outline: 0;
+    border: 2px solid #1ac966;
+    border-radius: 100%;
+    line-height: 1.8rem;
+    background: none;
+    font-size: 1.6rem;
+    color: #1ac966;
+    transition: all 0.3s;
 
-const Header = () => (
+    &:active {
+        color: #eee;
+        border-color: #eee;
+    }
+
+    @media (max-width: 768px) {
+        display: inline-block;
+    }
+`;
+
+
+const Header = ({ setSidebarOpen }) => (
     <StyledHeader>
         <StyledHeaderFlex>
             <StyledHeaderAvatarFlex>
@@ -152,6 +184,7 @@ const Header = () => (
                     Software developer
                 </StyledSpan>
             </StyledHeaderNameContainer>
+            <StyledCloseButton onClick={() => setSidebarOpen(false)}>X</StyledCloseButton>
         </StyledHeaderFlex>
         <StyledInfoBar>
             <StyledGithubIcon href="https://github.com/maciejpajkowski" target="_blank">

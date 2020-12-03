@@ -9,6 +9,18 @@ const StyledContainer = styled.div`
     color: #eee;
     display: grid;
     grid-template-columns: 2fr 6fr;
+
+    @media (max-width: 768px) {
+        display: block;
+        width: 94%;
+        height: 100%;
+    }
+
+    @media (max-width: 600px) {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 export default StyledContainer;

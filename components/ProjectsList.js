@@ -17,7 +17,7 @@ const customStyles = {
         border: 'none',
         borderRadius: '0',
         borderBottom: '3px solid #1ac966',
-        boxShadow: '0 0 10px 3px #111',
+        boxShadow: '0 0 10px 3px #000',
         width: '80%',
         height: '60vh'
     }
