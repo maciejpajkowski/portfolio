@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
         height: 100%;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
         display: block;
         width: 100%;
         height: 100%;

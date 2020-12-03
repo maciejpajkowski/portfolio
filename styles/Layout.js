@@ -8,7 +8,7 @@ import Sidebar from '../components/Sidebar';
 import ContentTemplate from '../components/ContentTemplate';
 
 const Layout = ({ pageTitle, headerText, children }) => {
-	const [ sidebarOpen, setSidebarOpen ] = useState(true);
+	const [ sidebarOpen, setSidebarOpen ] = useState(false);
 
 	return (
 		<>
@@ -18,7 +18,7 @@ const Layout = ({ pageTitle, headerText, children }) => {
 			<StyledContainer>
 				<StyledSidebarContainer isOpen={sidebarOpen}>
 					<Header setSidebarOpen={setSidebarOpen} />
-					<Sidebar />
+					<Sidebar setSidebarOpen={setSidebarOpen} />
 				</StyledSidebarContainer>
 				<StyledContentContainer>
 					<ContentTemplate headerText={headerText} setSidebarOpen={setSidebarOpen}>

@@ -46,6 +46,10 @@ const StyledSidebarList = styled.ul`
         &:hover {
             cursor: pointer;
         }
+
+        @media (max-height: 768px) {
+            height: 2.5em;
+        }
     }
 `;
 
@@ -64,14 +68,14 @@ const StyledPageLink = styled.li`
     }
 `;
 
-const Sidebar = () => (
+const Sidebar = ({ setSidebarOpen }) => (
     <StyledSidebar>
         <StyledSidebarHeader>
             GENERAL INFO
         </StyledSidebarHeader>
         <StyledSidebarList>
-            <Link href="/">
-                <StyledPageLink color="#3fd480" borderColor="#288550">
+            <Link href="/" >
+                <StyledPageLink color="#3fd480" borderColor="#288550" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faHome} />
                     </div>
@@ -79,7 +83,7 @@ const Sidebar = () => (
                 </StyledPageLink>
             </Link>
             <Link href="/about">
-                <StyledPageLink color="#3ec423" borderColor="#2e911a">
+                <StyledPageLink color="#3ec423" borderColor="#2e911a" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faUser} />
                     </div>
@@ -87,7 +91,7 @@ const Sidebar = () => (
                 </StyledPageLink>
             </Link>
             <Link href="/contact">
-                <StyledPageLink color="#ffc336" borderColor="#b58a24">
+                <StyledPageLink color="#ffc336" borderColor="#b58a24" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faPaperPlane} />
                     </div>
@@ -100,7 +104,7 @@ const Sidebar = () => (
         </StyledSidebarHeader>
         <StyledSidebarList>
             <Link href="/projects/react">
-                <StyledPageLink color="#30b7ff" borderColor="#2282b5">
+                <StyledPageLink color="#30b7ff" borderColor="#2282b5" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faReact} />
                     </div>
@@ -108,7 +112,7 @@ const Sidebar = () => (
                 </StyledPageLink>
             </Link>
             <Link href="/projects/javascript">
-                <StyledPageLink color="#ffee03" borderColor="#bfb200">
+                <StyledPageLink color="#ffee03" borderColor="#bfb200" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faJs} />
                     </div>
@@ -116,7 +120,7 @@ const Sidebar = () => (
                 </StyledPageLink>
             </Link>
             <Link href="/projects/html">
-                <StyledPageLink color="#ff4900" borderColor="#ad3200">
+                <StyledPageLink color="#ff4900" borderColor="#ad3200" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faHtml5} />
                     </div>
@@ -124,7 +128,7 @@ const Sidebar = () => (
                 </StyledPageLink>
             </Link>
             <Link href="/projects/dotnet">
-                <StyledPageLink color="#476cff" borderColor="#324db8">
+                <StyledPageLink color="#476cff" borderColor="#324db8" onClick={() => setSidebarOpen(false)}>
                     <div>
                         <FontAwesomeIcon icon={faMicrosoft} />
                     </div>

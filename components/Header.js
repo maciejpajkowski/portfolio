@@ -19,9 +19,8 @@ const StyledHeaderFlex = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 0 1rem 1rem;
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -146,16 +145,16 @@ const StyledMailIcon = styled.a`
 const StyledCloseButton = styled.button`
     display: none;
     position: absolute;
-    right: 5%;
-    top: 1rem;
+    right: 3%;
+    top: 0.5em;
     outline: 0;
-    border: 2px solid #1ac966;
-    border-radius: 100%;
-    line-height: 1.8rem;
+    border: 0;
+    line-height: 1em;
     background: none;
-    font-size: 1.6rem;
+    font-size: 1.4em;
     color: #1ac966;
     transition: all 0.3s;
+    cursor: pointer;
 
     &:active {
         color: #eee;

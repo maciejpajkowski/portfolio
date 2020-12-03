@@ -2,13 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDatabase, faFileExcel } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faNodeJs, faJs, faHtml5, faCss3Alt, faMicrosoft, faPython, faGit, faGitSquare } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faNodeJs, faJs, faHtml5, faCss3Alt, faMicrosoft, faPython, faGitSquare } from '@fortawesome/free-brands-svg-icons';
 
 const StyledAboutPageContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1rem;
     height: 100%;
+    overflow: scroll;
+
+    @media (max-width: 768px) {
+        margin-top: 2em;
+
+        h2, p {
+            margin: 0.6em 0;
+        }
+
+        h4 {
+            margin: 0.2em 0;
+        }
+    }
 `;
 
 const StyledTechnologiesDisplayCase = styled.div`
@@ -59,6 +72,15 @@ const StyledTechDisplayCaseItem = styled.div`
                 }
             }}
         }
+
+        @media (max-width: 600px) {
+            font-size: 3em;
+        }
+    }
+
+    @media (max-width: 600px) {
+        width: 8em;
+        padding: 0.5em;
     }
 `;
 

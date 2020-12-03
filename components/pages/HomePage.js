@@ -37,6 +37,10 @@ const StyledHomePageContainer = styled.div`
     flex-direction: column;
     padding: 1rem;
     height: 100%;
+
+    @media (max-width: 768px) {
+      margin-top: 2em;
+    }
 `;
 
 const StyledHomePageTopContainer = styled.div`
@@ -45,6 +49,16 @@ const StyledHomePageTopContainer = styled.div`
     padding-right: 1rem;
     flex-direction: column;
     border-bottom: 2px solid #1ac966;
+
+    @media (max-width: 480px) {
+      h1 {
+        margin: 0.2em 0;
+      }
+
+      p {
+        margin: 0.4em 0;
+      }
+    }
 `;
 
 const StyledHomePageBottomContainer = styled.div`
@@ -54,6 +68,12 @@ const StyledHomePageBottomContainer = styled.div`
     
     h2 {
         text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        margin: 0.6em;
+      }
     }
 `;
 

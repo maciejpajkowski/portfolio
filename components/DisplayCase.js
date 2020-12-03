@@ -36,6 +36,10 @@ const StyledDisplayCaseTitle = styled.h3`
     justify-content: space-between;
     font-size: 24px;
     margin: 0 1.4rem 1rem 0;
+
+    @media (max-width: 480px) {
+        font-size: 20px;
+    }
 `;
 
 const StyledDisplayCaseProject = styled.div`

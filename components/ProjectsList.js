@@ -62,6 +62,16 @@ const StyledProjectsList = styled.div`
                                         to(#19911D),
                                         color-stop(.6,#1ac966))
     }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+        margin-top: 2em;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 const ProjectsList = ({ data }) => {

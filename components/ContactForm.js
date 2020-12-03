@@ -49,6 +49,18 @@ const StyledContactForm = styled.form`
             color: #333;
         }
     }
+
+    @media (max-width: 600px) {
+        align-items: center;
+
+        input, textarea {
+            width: 100%;
+        }
+
+        button {
+            width: 40%;
+        }
+    }
 `;
 
 const ContactForm = () => {

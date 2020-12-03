@@ -15,6 +15,14 @@ const GlobalStyle = createGlobalStyle`
         font-size: 18px;
         font-family: 'Lato', 'Verdana', 'Arial';
         overflow: hidden;
+
+        @media (max-height: 768px) {
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 14px;
+        }
     }
 
     #__next {
