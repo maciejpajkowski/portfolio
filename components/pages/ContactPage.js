@@ -7,6 +7,10 @@ const StyledContactPageContainer = styled.div`
     flex-direction: column;
     padding: 1rem;
     height: 100%;
+
+    @media (max-width: 768px) {
+        margin-top: 2em;
+    }
 `;
 
 const ContactPage = () => {

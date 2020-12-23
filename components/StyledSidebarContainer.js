@@ -19,6 +19,10 @@ const StyledSidebarContainer = styled.div`
     @media (max-width: 480px) {
         width: 100%;
     }
+
+    @media (min-height: 1024px) {
+        height: 92%;
+    }
 `;
 
 export default StyledSidebarContainer;

@@ -11,8 +11,12 @@ const StyledContentHeader = styled.header`
 
     @media (max-width: 768px) {
         position: fixed;
-        width: 100%;
+        width: 94%;
         font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
     }
 `;
 
@@ -41,10 +45,30 @@ const StyledOpenButton = styled.button`
     }
 
     @media (max-width: 600px) {
-        left: 2%;
+        left: 3%;
     }
 
-    
+    @media (max-width: 540px) {
+        /* left: 4.8%; */
+        left: 0.6em;
+    }
+
+    @media (max-width: 480px) {
+        top: 0.45em;
+    }
+
+    @media (min-height: 720px) {
+        left: 0.6em;
+    }
+
+    @media (min-height: 720px) and (max-width: 540px) {
+        left: 1.3em;
+    }
+
+    @media (min-height: 1024px) {
+        top: 5%;
+        left: 4.4%;
+    }
 `
 
 const ContentTemplate = ({ headerText, children, setSidebarOpen }) => {

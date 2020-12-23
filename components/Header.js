@@ -19,6 +19,7 @@ const StyledHeaderFlex = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 1em;
 
     @media (max-width: 1440px) {
         flex-direction: column;

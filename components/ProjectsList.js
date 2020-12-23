@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectsListItem from './ProjectsListItem';
 import DisplayCase from './DisplayCase';
@@ -19,7 +19,8 @@ const customStyles = {
         borderBottom: '3px solid #1ac966',
         boxShadow: '0 0 10px 3px #000',
         width: '80%',
-        height: '60vh'
+        height: '60vh',
+        inset: '10px'
     }
   }; // modal custom styles
 
@@ -60,13 +61,17 @@ const StyledProjectsList = styled.div`
                                         75% 84%,
                                         from(#4D9C41),
                                         to(#19911D),
-                                        color-stop(.6,#1ac966))
+                                        color-stop(.6,#1ac966));
     }
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr;
         height: 100vh;
         margin-top: 2em;
+    }
+
+    @media (max-width: 768px) and (min-height: 1024px) {
+        height: 85vh;
     }
 
     @media (max-width: 480px) {

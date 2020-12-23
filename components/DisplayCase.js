@@ -9,6 +9,10 @@ import getAdequateText from '../utils/getAdequateText';
 const StyledDisplayCaseContainer = styled.div`
     display: flex;
     height: 100%;
+
+    @media (max-width: 540px) {
+        flex-direction: column;
+    }
 `;
 
 const StyledDisplayCaseHalfContainer = styled.div`
@@ -21,13 +25,33 @@ const StyledDisplayCaseHalfContainer = styled.div`
     &:nth-child(1) {
         padding-left: 1rem;
         padding-right: 1rem;
+
+        @media (max-width: 540px) {
+            width: 100%;
+            padding: 0;
+        }
     }
 
     &:nth-child(2) {
         padding-right: 1rem;
         display: flex;
         align-items: center;
-        /* justify-content: center; */
+
+        @media (max-width: 540px) {
+            width: 100%;
+        }
+
+        @media (min-height: 720px) {
+            height: auto;
+        }
+
+        @media (max-width: 540px) and (min-height: 720px) {
+            height: 25vh;
+        }
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 0;
     }
 `;
 
@@ -37,8 +61,8 @@ const StyledDisplayCaseTitle = styled.h3`
     font-size: 24px;
     margin: 0 1.4rem 1rem 0;
 
-    @media (max-width: 480px) {
-        font-size: 20px;
+    @media (max-width: 540px) {
+        font-size: 16px;
     }
 `;
 
@@ -72,6 +96,10 @@ const StyledDisplayCaseProjectType = styled.span`
 const StyledDisplayCaseDescription = styled.p`
     font-size: 18px;
     word-wrap: break-word;
+
+    @media (max-width: 540px) {
+        font-size: 1em;
+    }
 `;
 
 const StyledDisplayCaseButtonContainer = styled.div`
@@ -90,11 +118,26 @@ const StyledDisplayCaseLink = styled.a`
 
     svg {
         margin-right: 0.6rem;
-        font-size: 24px;
+        font-size: 1.6em;
     }
 
     span {
-        font-size: 20px;
+        font-size: 1.6em;
+    }
+
+    @media (max-width: 1600px) {
+        svg, span {
+            font-size: 1.3em;
+        }
+    }
+
+    @media (max-width: 1366px) {
+        svg, span {
+            font-size: 1em;
+        }
+        svg {
+            margin-right: 0.4em;
+        }
     }
 `;
 
@@ -154,6 +197,11 @@ const StyledDisplayCaseButton = styled.button`
             }
         }};
     }
+
+    @media (max-width: 480px) {
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
 `;
 
 const StyledDisplayCaseImageContainer = styled.div`
@@ -162,6 +210,10 @@ const StyledDisplayCaseImageContainer = styled.div`
     width: 95%;
     overflow: hidden;
     margin-bottom: 2rem;
+
+    @media (max-width: 480px) {
+        margin-bottom: 0;
+    }
 `;
 
 const StyledDisplayCaseImage = styled.div`
@@ -174,14 +226,18 @@ const StyledDisplayCaseImage = styled.div`
 
 const StyledCloseButton = styled(StyledDisplayCaseButton)`
     display: ${props => props.isModal ? 'inline-block' : 'none'};
-    font-size: 1rem;
-    line-height: 1rem;
-    height: 2.2rem;
+    font-size: 0.8em;
+    line-height: 1em;
+    height: 2.2em;
     position: absolute;
-    right: -1.5rem;
-    top: 0.5rem;
+    right: -1.5em;
+    top: 0.5em;
     color: #eee;
     border: none;
+
+    @media (max-width: 480px) {
+        right: -0.6em;
+    }
 `;
 
 const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isModal, onClick }) => {

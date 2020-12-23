@@ -9,7 +9,11 @@ const StyledAboutPageContainer = styled.div`
     flex-direction: column;
     padding: 1rem;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
+
+    h2, h4, p {
+        margin: 0.6em 0;
+    }
 
     @media (max-width: 768px) {
         margin-top: 2em;
@@ -22,6 +26,11 @@ const StyledAboutPageContainer = styled.div`
             margin: 0.2em 0;
         }
     }
+
+    @media (min-height: 1024px) {
+        font-size: 18px;
+    }
+
 `;
 
 const StyledTechnologiesDisplayCase = styled.div`
@@ -41,7 +50,7 @@ const StyledTechDisplayCaseItem = styled.div`
     text-align: center;
 
     svg {
-        font-size: 4rem;
+        font-size: 4em;
         margin-bottom: 0.5rem;
         color: #1ac966;
         transition: all 0.3s;
@@ -73,12 +82,16 @@ const StyledTechDisplayCaseItem = styled.div`
             }}
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             font-size: 3em;
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1366px) {
+        width: 7em;
+    }
+
+    @media (max-width: 768px) {
         width: 8em;
         padding: 0.5em;
     }
@@ -110,7 +123,7 @@ const AboutPage = () => (
             </StyledTechDisplayCaseItem>
             <StyledTechDisplayCaseItem icon={faJs}>
                 <FontAwesomeIcon icon={faJs} />
-                <span>JavaScript (ES6+)</span>
+                <span>JavaScript</span>
             </StyledTechDisplayCaseItem>
             <StyledTechDisplayCaseItem icon={faNodeJs}>
                 <FontAwesomeIcon icon={faNodeJs} />

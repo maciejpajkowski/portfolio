@@ -52,11 +52,21 @@ const StyledHomePageTopContainer = styled.div`
 
     @media (max-width: 480px) {
       h1 {
-        margin: 0.2em 0;
+        margin: 0.6em 0;
       }
 
       p {
         margin: 0.4em 0;
+      }
+    }
+
+    @media (max-height: 600px) {
+      h1 {
+        margin: 0.4em 0;
+      }
+
+      p {
+        margin: 0.2em 0;
       }
     }
 `;
@@ -71,8 +81,12 @@ const StyledHomePageBottomContainer = styled.div`
     }
 
     @media (max-width: 480px) {
+      margin-top: 0.6em;
+      height: 60%;
+
       h2 {
         margin: 0.6em;
+        text-decoration-line: underline;
       }
     }
 `;

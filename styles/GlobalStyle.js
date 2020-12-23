@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
             font-size: 16px;
         }
 
+        @media (max-width: 1600px) {
+            font-size: 16px;
+        }
+
         @media (max-width: 600px) {
             font-size: 14px;
         }

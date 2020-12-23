@@ -21,6 +21,10 @@ const StyledContainer = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    @media (min-height: 1024px) {
+        height: 92%;
+    }
 `;
 
 export default StyledContainer;
