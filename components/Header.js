@@ -58,7 +58,7 @@ const StyledHeaderAvatarContainer = styled.div`
 `;
 
 const StyledHeaderAvatar = styled.div`
-    background: url('./static/me.jpg');
+    background: url('/me.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
