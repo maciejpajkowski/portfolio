@@ -6,7 +6,7 @@ import getAdequateIcon from '../utils/getAdequateIcon';
 
 const StyledProjectsListItemContainer = styled.div`
     border-bottom: 3px solid #1ac966;
-    height: 15.5rem;
+    height: 15rem;
     cursor: pointer;
     transition: all 0.3s;
 
