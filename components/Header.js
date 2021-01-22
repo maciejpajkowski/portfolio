@@ -93,7 +93,7 @@ const StyledName = styled.h1`
 `;
 
 const StyledSpan = styled.span`
-    color: #888;
+    color: #aaa;
 
     @media (max-width: 1700px) {
         font-size: 12px

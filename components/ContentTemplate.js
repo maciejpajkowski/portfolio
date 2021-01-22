@@ -23,8 +23,8 @@ const StyledContentHeader = styled.header`
 const StyledOpenButton = styled.button`
     display: none;
     position: fixed;
-    left: 2%;
-    top: 1.3%;
+    left: 10px;
+    top: 10px;
     outline: 0;
     border: 0;
     line-height: 1em;
@@ -41,31 +41,14 @@ const StyledOpenButton = styled.button`
 
     @media (max-width: 768px) {
         display: inline-block;
+        left: 10px;
+    }
+
+    @media (height: 720px) and (width: 540px) { /* Surface */
         left: 5%;
     }
 
-    @media (max-width: 600px) {
-        left: 3%;
-    }
-
-    @media (max-width: 540px) {
-        /* left: 4.8%; */
-        left: 0.6em;
-    }
-
-    @media (max-width: 480px) {
-        top: 0.45em;
-    }
-
-    @media (min-height: 720px) {
-        left: 0.6em;
-    }
-
-    @media (min-height: 720px) and (max-width: 540px) {
-        left: 1.3em;
-    }
-
-    @media (min-height: 1024px) {
+    @media (height: 1024px) and (width: 768px) { /* iPad */
         top: 5%;
         left: 4.4%;
     }

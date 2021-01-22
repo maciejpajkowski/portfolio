@@ -6,7 +6,7 @@ import getAdequateIcon from '../utils/getAdequateIcon';
 
 const StyledProjectsListItemContainer = styled.div`
     border-bottom: 3px solid #1ac966;
-    height: 15rem;
+    height: 15.5rem;
     cursor: pointer;
     transition: all 0.3s;
 
@@ -73,7 +73,7 @@ const StyledProjectsListItemTextContainer = styled.div`
 `;
 
 const StyledProjectsListItemTitle = styled.h3`
-    margin: 0.35rem 0 0 0;
+    margin: 0.3rem 0 0 0;
     font-size: 1.1rem;
 `;
 
