@@ -97,8 +97,6 @@ const HomePage = () => {
 	if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :C</p>;
   
-  console.log(data);
-
   const projectImage = data.user.repositories.edges[0].node.openGraphImageUrl;
   const projectName = data.user.repositories.edges[0].node.name;
   const projectDescription = data.user.repositories.edges[0].node.description;
