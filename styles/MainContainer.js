@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const StyledContainer = styled.div`
+const MainContainer = styled.div`
     box-shadow: 0px 2px 5px 0px #313131;
     box-sizing: border-box;
     height: 92%;
@@ -27,4 +27,4 @@ const StyledContainer = styled.div`
     }
 `;
 
-export default StyledContainer;
+export default MainContainer;

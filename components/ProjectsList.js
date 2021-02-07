@@ -1,83 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import ProjectsListItem from './ProjectsListItem';
-import DisplayCase from './DisplayCase';
-import Modal from 'react-modal';
+import React, { useState } from "react";
+import ProjectsListItem from "./ProjectsListItem";
+import DisplayCase from "./DisplayCase";
+import Modal from "react-modal";
+import modalCustomStyles from "../styles/ProjectsList/modalCustomStyles";
+import Padding from "../styles/ProjectsList/Padding";
+import ListContainer from "../styles/ProjectsList/ListContainer";
 
 Modal.setAppElement("#__next");
-
-const customStyles = {
-    overlay: {
-        backgroundColor: 'rgba(55, 55, 55, 0.6)'
-    },
-    content : {
-        background: '#333',
-        color: '#fff',
-        margin: 'auto',
-        border: 'none',
-        borderRadius: '0',
-        borderBottom: '3px solid #1ac966',
-        boxShadow: '0 0 10px 3px #000',
-        width: '80%',
-        height: '60vh',
-        inset: '10px'
-    }
-  }; // modal custom styles
-
-const StyledPadding = styled.div`
-    height: 0.1rem;
-    width: 100%;
-`;
-
-const StyledProjectsList = styled.div` 
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, minmax(15rem, auto));
-    grid-gap: 1rem 1rem;
-    height: 85vh;
-    max-height: 100%;
-    overflow: auto;
-    padding: 1rem 1rem 0 1rem;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-
-    &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-        background-color: transparent;
-        border-radius: 5px;
-    }
-
-    &::-webkit-scrollbar {
-        width: 5px;
-        background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #FFF;
-        background-image: -webkit-gradient(linear,
-                                        40% 0%,
-                                        75% 84%,
-                                        from(#4D9C41),
-                                        to(#19911D),
-                                        color-stop(.6,#1ac966));
-    }
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr 1fr;
-        height: 100vh;
-        margin-top: 2em;
-    }
-
-    @media (max-width: 768px) and (min-height: 1024px) {
-        height: 85vh;
-    }
-
-    @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-    }
-`;
 
 const ProjectsList = ({ data }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -87,8 +16,8 @@ const ProjectsList = ({ data }) => {
         type: "",
         repoLink: "",
         liveLink: "",
-        image: ""
-    });   
+        image: "",
+    });
 
     const openModal = (item) => {
         setModalContents({
@@ -97,15 +26,15 @@ const ProjectsList = ({ data }) => {
             type: item.repositoryTopics.edges[0].node.topic.name,
             repoLink: item.url,
             liveLink: item.homepageUrl,
-            image: item.openGraphImageUrl
+            image: item.openGraphImageUrl,
         });
         setModalIsOpen(true);
-    }
+    };
     const closeModal = () => setModalIsOpen(false);
 
     return (
         <>
-            <StyledProjectsList>
+            <ListContainer>
                 {data.map((project) => {
                     return (
                         <ProjectsListItem
@@ -116,13 +45,13 @@ const ProjectsList = ({ data }) => {
                             key={project.node.id}
                             onClick={() => openModal(project.node)}
                         />
-                    )
+                    );
                 })}
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     key={modalContents.name}
-                    style={customStyles}
+                    style={modalCustomStyles}
                     closeTimeoutMS={300}
                 >
                     <DisplayCase
@@ -136,12 +65,12 @@ const ProjectsList = ({ data }) => {
                         isModal
                     />
                 </Modal>
-                <StyledPadding />
-                <StyledPadding />
-                <StyledPadding />
-            </StyledProjectsList>
+                <Padding />
+                <Padding />
+                <Padding />
+            </ListContainer>
         </>
-    )
-}
+    );
+};
 
 export default ProjectsList;
