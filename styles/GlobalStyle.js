@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -62,6 +62,7 @@ const GlobalStyle = createGlobalStyle`
     .ReactModal__Content--before-close {
         transform: scale(0.8);
     }
+
 `;
 
 export default GlobalStyle;

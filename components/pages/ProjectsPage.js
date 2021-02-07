@@ -1,27 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
-import ProjectsList from '../ProjectsList';
-import { useQuery } from '@apollo/react-hooks';
+import React from "react";
+import ProjectsList from "../ProjectsList";
+import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import testData from '../../tests/testData';
+import Container from "../../styles/pages/ProjectsPage/Container";
+// import testData from '../../tests/testData';
 
 const GET_PROJECTS_DATA = gql`
-{
-    user(login: "maciejpajkowski") {
-        repositories(first: 50, privacy: PUBLIC, orderBy: { field: UPDATED_AT, direction: DESC }) {
-            edges {
-                node {
-                    id
-                    name
-                    description
-                    openGraphImageUrl
-                    url
-                    homepageUrl
-                    repositoryTopics(first: 1) {
-                        edges {
-                            node {
-                                topic {
-                                    name
+    {
+        user(login: "maciejpajkowski") {
+            repositories(first: 50, privacy: PUBLIC, orderBy: { field: UPDATED_AT, direction: DESC }) {
+                edges {
+                    node {
+                        id
+                        name
+                        description
+                        openGraphImageUrl
+                        url
+                        homepageUrl
+                        repositoryTopics(first: 1) {
+                            edges {
+                                node {
+                                    topic {
+                                        name
+                                    }
                                 }
                             }
                         }
@@ -30,14 +31,6 @@ const GET_PROJECTS_DATA = gql`
             }
         }
     }
-}
-`;
-
-const StyledProjectsPage = styled.div`
-    display: flex;
-    /* padding: 1rem; */
-    width: 100%;
-    height: 100%;
 `;
 
 const ProjectsPage = ({ tech }) => {
@@ -45,8 +38,6 @@ const ProjectsPage = ({ tech }) => {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :C</p>;
-
-    console.log(data);
 
     const getProjects = (techType) => {
         let projectsList = data.user.repositories.edges.filter((item) => {
@@ -58,13 +49,13 @@ const ProjectsPage = ({ tech }) => {
         // });
 
         return projectsList;
-    }
+    };
 
     return (
-        <StyledProjectsPage>
+        <Container>
             <ProjectsList data={getProjects(tech)} />
-        </StyledProjectsPage>
-    )
-}
+        </Container>
+    );
+};
 
 export default ProjectsPage;

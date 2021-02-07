@@ -1,0 +1,9 @@
+import styled from "styled-components";
+
+const List = styled.ul`
+    margin: 0;
+    padding: 0;
+    background: #333;
+`;
+
+export default List;
