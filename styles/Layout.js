@@ -14,7 +14,7 @@ const Layout = ({ pageTitle, headerText, children }) => {
         <>
             <Head>
                 <title>{pageTitle}</title>
-                <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
+                <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled"></meta>
             </Head>
             <MainContainer>
                 <SidebarContainer isOpen={sidebarOpen}>

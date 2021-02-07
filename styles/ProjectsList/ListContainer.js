@@ -4,7 +4,7 @@ const ListContainer = styled.div`
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 250px);
+    grid-auto-rows: min-content;
     grid-gap: 1rem 1rem;
     height: 85vh;
     max-height: 100%;

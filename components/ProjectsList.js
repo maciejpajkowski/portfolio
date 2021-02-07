@@ -30,6 +30,7 @@ const ProjectsList = ({ data }) => {
         });
         setModalIsOpen(true);
     };
+
     const closeModal = () => setModalIsOpen(false);
 
     return (
@@ -65,8 +66,8 @@ const ProjectsList = ({ data }) => {
                         isModal
                     />
                 </Modal>
-                <Padding />
-                <Padding />
+                {/* <Padding /> */}
+                {/* <Padding /> */}
                 <Padding />
             </ListContainer>
         </>
