@@ -37,8 +37,8 @@ const GET_HOMEPAGE_DATA = gql`
 const HomePage = () => {
     const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :C</p>;
+    if (loading) return <p style={{ padding: 1 + "rem" }}>Loading...</p>;
+    if (error) return <p style={{ padding: 1 + "rem" }}>Error :C</p>;
 
     const projectImage = data.user.repositories.edges[0].node.openGraphImageUrl;
     const projectName = data.user.repositories.edges[0].node.name;

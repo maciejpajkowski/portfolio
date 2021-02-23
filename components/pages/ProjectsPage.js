@@ -36,8 +36,8 @@ const GET_PROJECTS_DATA = gql`
 const ProjectsPage = ({ tech }) => {
     const { loading, error, data } = useQuery(GET_PROJECTS_DATA);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :C</p>;
+    if (loading) return <p style={{ padding: 1 + "rem" }}>Loading...</p>;
+    if (error) return <p style={{ padding: 1 + "rem" }}>Error :C</p>;
 
     const getProjects = (techType) => {
         let projectsList = data.user.repositories.edges.filter((item) => {

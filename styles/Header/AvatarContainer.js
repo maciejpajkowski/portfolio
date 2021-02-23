@@ -4,8 +4,8 @@ const AvatarContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6em;
-    height: 6em;
+    width: 5.4em;
+    height: 5.4em;
     border-radius: 100%;
     border: 2px solid #1ac966;
     overflow: hidden;
