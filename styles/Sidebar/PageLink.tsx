@@ -16,7 +16,7 @@ const PageLink = styled.li<{ $borderColor?: string }>`
         font-size: 22px;
         width: 2rem;
         text-align: center;
-        color: #1ac966; /*${(props) => props.color}*/
+        color: #1ac966;
     }
 
     div,
@@ -29,8 +29,6 @@ const PageLink = styled.li<{ $borderColor?: string }>`
         border: none;
         box-shadow: 0px 5px 0px 0px ${(props) => props.$borderColor};
         transform: translateY(-5px);
-
-        /* border-bottom: 5px solid ${(props) => props.$borderColor}; */
         background: ${(props) => props.color};
 
         div,

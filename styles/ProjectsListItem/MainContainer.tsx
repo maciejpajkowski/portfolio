@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MainContainer = styled.div`
+const MainContainer = styled.div<{ $type: string; }>`
     border-bottom: 3px solid #1ac966;
     cursor: pointer;
     transition: all 0.3s;
@@ -11,7 +11,7 @@ const MainContainer = styled.div`
         transform: translateY(-3px);
         border-bottom: 3px solid
             ${(props) => {
-                switch (props.type) {
+                switch (props.$type) {
                     case "react":
                         return "#30b7ff";
                     case "angular":

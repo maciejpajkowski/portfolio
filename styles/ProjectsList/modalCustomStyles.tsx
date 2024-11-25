@@ -15,6 +15,6 @@ const modalCustomStyles = {
         height: "60vh",
         inset: "10px",
     },
-}; // modal custom styles
+};
 
 export default modalCustomStyles;

@@ -12,10 +12,10 @@ import Description from "../styles/ProjectsListItem/Description";
 
 const ProjectsListItem = ({ title, description, image, type, onClick }) => {
     return (
-        <MainContainer type={type} onClick={onClick}>
-            <Image image={image} />
+        <MainContainer $type={type} onClick={onClick}>
+            <Image $image={image} />
             <Info>
-                <Icon type={type}>
+                <Icon $type={type}>
                     <FontAwesomeIcon icon={getAdequateIcon(type)} />
                 </Icon>
                 <TextContainer>
