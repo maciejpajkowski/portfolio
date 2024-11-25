@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Head from "next/head";
 import MainContainer from "./MainContainer";
@@ -17,7 +18,7 @@ const Layout = ({ pageTitle, headerText, children }) => {
                 <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled"></meta>
             </Head>
             <MainContainer>
-                <SidebarContainer isOpen={sidebarOpen}>
+                <SidebarContainer $isOpen={sidebarOpen}>
                     <Header setSidebarOpen={setSidebarOpen} />
                     <Sidebar setSidebarOpen={setSidebarOpen} />
                 </SidebarContainer>

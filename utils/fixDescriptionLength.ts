@@ -1,7 +1,7 @@
 const fixDescriptionLength = (suppliedDescription) => {
     let charCount = 0;
     const maxCharCount = 88;
-    let fixedDescriptionArray = [];
+    let fixedDescriptionArray: string[] = [];
 
     if (!!suppliedDescription) {
 

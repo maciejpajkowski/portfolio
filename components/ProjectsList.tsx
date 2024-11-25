@@ -51,7 +51,7 @@ const ProjectsList = ({ data }) => {
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
-                    key={modalContents.name}
+                    key={modalContents.title}
                     style={modalCustomStyles}
                     closeTimeoutMS={300}
                 >

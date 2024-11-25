@@ -36,43 +36,43 @@ const AboutPage = () => (
             development as a... well, developer.
         </p>
         <DisplayCase>
-            <DisplayCaseItem icon={faHtml5}>
+            <DisplayCaseItem $icon={faHtml5}>
                 <FontAwesomeIcon icon={faHtml5} />
                 <span>HTML 5</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faCss3Alt}>
+            <DisplayCaseItem $icon={faCss3Alt}>
                 <FontAwesomeIcon icon={faCss3Alt} />
                 <span>CSS 3</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faJs}>
+            <DisplayCaseItem $icon={faJs}>
                 <FontAwesomeIcon icon={faJs} />
                 <span>JavaScript</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faAngular}>
+            <DisplayCaseItem $icon={faAngular}>
                 <FontAwesomeIcon icon={faAngular} />
                 <span>Angular</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faReact}>
+            <DisplayCaseItem $icon={faReact}>
                 <FontAwesomeIcon icon={faReact} />
                 <span>React.js</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faMicrosoft}>
+            <DisplayCaseItem $icon={faMicrosoft}>
                 <FontAwesomeIcon icon={faMicrosoft} />
                 <span>C#</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faDatabase}>
+            <DisplayCaseItem $icon={faDatabase}>
                 <FontAwesomeIcon icon={faDatabase} />
                 <span>MS SQL</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faFileExcel}>
+            <DisplayCaseItem $icon={faFileExcel}>
                 <FontAwesomeIcon icon={faFileExcel} />
                 <span>VBA</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faPython}>
+            <DisplayCaseItem $icon={faPython}>
                 <FontAwesomeIcon icon={faPython} />
                 <span>Python</span>
             </DisplayCaseItem>
-            <DisplayCaseItem icon={faGitSquare}>
+            <DisplayCaseItem $icon={faGitSquare}>
                 <FontAwesomeIcon icon={faGitSquare} />
                 <span>GIT</span>
             </DisplayCaseItem>

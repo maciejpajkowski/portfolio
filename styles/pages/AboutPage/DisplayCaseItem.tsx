@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { faDatabase, faFileExcel } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase, faFileExcel, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import {
     faReact,
     faAngular,
@@ -11,7 +11,7 @@ import {
     faGitSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
-const DisplayCaseItem = styled.div`
+const DisplayCaseItem = styled.div<{ $icon?: IconDefinition }>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@ const DisplayCaseItem = styled.div`
 
         &:hover {
             color: ${(props) => {
-                switch (props.icon) {
+                switch (props.$icon) {
                     case faHtml5:
                         return "#ff4900";
                     case faCss3Alt:

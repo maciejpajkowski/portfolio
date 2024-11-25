@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Button = styled.button`
+const Button = styled.button<{ $repoLink?: string; $liveLink?: string; }>`
     background: inherit;
     color: ${(props) => {
-        if (!!props.repoLink) {
+        if (!!props.$repoLink) {
             return "#257f5c";
-        } else if (!!props.liveLink) {
+        } else if (!!props.$liveLink) {
             return "#1ac966";
         } else {
             return "#ddd";
@@ -14,9 +14,9 @@ const Button = styled.button`
 
     border: 2px solid
         ${(props) => {
-            if (!!props.repoLink) {
+            if (!!props.$repoLink) {
                 return "#257f5c";
-            } else if (!!props.liveLink) {
+            } else if (!!props.$liveLink) {
                 return "#1ac966";
             } else {
                 return "#ddd";
@@ -33,9 +33,9 @@ const Button = styled.button`
 
     &:hover {
         background: ${(props) => {
-            if (!!props.repoLink) {
+            if (!!props.$repoLink) {
                 return "#257f5c";
-            } else if (!!props.liveLink) {
+            } else if (!!props.$liveLink) {
                 return "#1ac966";
             } else {
                 return "#ddd";
@@ -48,9 +48,9 @@ const Button = styled.button`
         background: #eee;
         border-color: #eee;
         color: ${(props) => {
-            if (!!props.repoLink) {
+            if (!!props.$repoLink) {
                 return "#257f5c";
-            } else if (!!props.liveLink) {
+            } else if (!!props.$liveLink) {
                 return "#1ac966";
             } else {
                 return "#000";

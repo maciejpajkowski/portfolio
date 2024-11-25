@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Button from "./Button";
 
-const CloseButton = styled(Button)`
-    display: ${(props) => (props.isModal ? "inline-block" : "none")};
+const CloseButton = styled(Button)<{ $isModal?: boolean }>`
+    display: ${(props) => (props.$isModal ? "inline-block" : "none")};
     font-size: 0.8em;
     line-height: 1em;
     height: 2.2em;

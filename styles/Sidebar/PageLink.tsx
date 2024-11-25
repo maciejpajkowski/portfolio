@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const PageLink = styled.li`
+const PageLink = styled.li<{ $borderColor?: string }>`
     display: flex;
     align-items: center;
     height: 3rem;
-    text-decoration: none;
+    color: #fff;
     list-style: none;
     padding: 0 2rem;
     transition: all 0.3s;
@@ -27,15 +27,15 @@ const PageLink = styled.li`
     &:hover {
         cursor: pointer;
         border: none;
-        box-shadow: 0px 5px 0px 0px ${(props) => props.borderColor};
+        box-shadow: 0px 5px 0px 0px ${(props) => props.$borderColor};
         transform: translateY(-5px);
 
-        /* border-bottom: 5px solid ${(props) => props.borderColor}; */
+        /* border-bottom: 5px solid ${(props) => props.$borderColor}; */
         background: ${(props) => props.color};
 
         div,
         span {
-            color: ${(props) => props.borderColor};
+            color: ${(props) => props.$borderColor};
         }
     }
 

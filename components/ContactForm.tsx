@@ -28,7 +28,7 @@ const ContactForm = () => {
             <label>Your email address:</label>
             <input type="email" name="email" required />
             <label>Message:</label>
-            <textarea type="text" name="message" rows="8" required />
+            <textarea name="message" rows={8} required />
             {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit!</button>}
             {status === "ERROR" && <p>There was an error :/</p>}
         </FormContainer>

@@ -24,7 +24,7 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isMo
                 <Title>
                     {title}
                     <Project>
-                        <ProjectLogo type={type}>
+                        <ProjectLogo $type={type}>
                             <FontAwesomeIcon icon={getAdequateIcon(type)} />
                         </ProjectLogo>
                         {getAdequateText(type)}
@@ -39,19 +39,19 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isMo
                         </Button>
                     </Link>
                     <Link href={repoLink} target="_blank">
-                        <Button repoLink>
+                        <Button $repoLink={repoLink}>
                             <FontAwesomeIcon icon={faGithub} />
                             <span>Repo</span>
                         </Button>
                     </Link>
                     <Link href={liveLink} target="_blank">
-                        <Button liveLink>
+                        <Button $liveLink={liveLink}>
                             <FontAwesomeIcon icon={faGlobeEurope} />
                             <span>Live</span>
                         </Button>
                     </Link>
                     <Link onClick={onClick}>
-                        <CloseButton isModal={isModal}>
+                        <CloseButton $isModal={isModal}>
                             <span>X</span>
                         </CloseButton>
                     </Link>
@@ -59,7 +59,7 @@ const DisplayCase = ({ title, description, type, repoLink, liveLink, image, isMo
             </HalfContainer>
             <HalfContainer>
                 <ImageContainer>
-                    <Image image={image} />
+                    <Image $image={image} />
                 </ImageContainer>
             </HalfContainer>
         </MainContainer>

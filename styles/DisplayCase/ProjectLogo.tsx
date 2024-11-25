@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const ProjectLogo = styled.div`
+const ProjectLogo = styled.div<{ $type: string; }>`
     font-size: 22px;
     color: ${(props) => {
-        switch (props.type) {
+        switch (props.$type) {
             case "react":
                 return "#30b7ff";
             case "angular":

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Image = styled.div`
+const Image = styled.div<{ $image: string; }>`
     height: 100%;
     width: 100%;
-    background: url(${(props) => props.image});
+    background: url(${(props) => props.$image});
     background-size: cover;
     background-position: left top;
 `;

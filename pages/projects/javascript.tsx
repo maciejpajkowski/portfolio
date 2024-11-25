@@ -1,5 +1,5 @@
-import Layout from '../../styles/Layout';
-import ProjectsPage from '../../components/pages/ProjectsPage';
+import ProjectsPage from "../../components/pages/ProjectsPage";
+import Layout from "../../styles/Layout";
 
 const ProjectsJavascript = () => {
 	return (

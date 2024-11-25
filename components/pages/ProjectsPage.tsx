@@ -1,8 +1,7 @@
 import React from "react";
 import ProjectsList from "../ProjectsList";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
 import Container from "../../styles/pages/ProjectsPage/Container";
+import { gql, useQuery } from "@apollo/client";
 // import testData from '../../tests/testData';
 
 const GET_PROJECTS_DATA = gql`
@@ -39,9 +38,10 @@ const ProjectsPage = ({ tech }) => {
     if (loading) return <p style={{ padding: 1 + "rem" }}>Loading...</p>;
     if (error) return <p style={{ padding: 1 + "rem" }}>Error :C</p>;
 
+    console.log(data);
     const getProjects = (techType) => {
         let projectsList = data.user.repositories.edges.filter((item) => {
-            return item.node.repositoryTopics.edges[0].node.topic.name === techType;
+            return item.node.repositoryTopics.edges[0]?.node.topic.name === techType;
         });
 
         // let projectsList = testData.user.repositories.edges.filter((item) => {
